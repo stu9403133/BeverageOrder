@@ -12,6 +12,7 @@ class BeverageTableViewController: UITableViewController {
     
     var beverageList = Beverage(category: "")
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,6 +61,14 @@ class BeverageTableViewController: UITableViewController {
         return cell
     }
     
+    @IBSegueAction func beverageDetailChoose(_ coder: NSCoder) -> DetailViewController? {
+        var controller = DetailViewController(coder: coder)
+        if let row = tableView.indexPathForSelectedRow?.row {
+            controller?.beverageDetail = beverageList.drinks![row]
+        }
+        print("send data is successful", controller?.beverageDetail ?? nil)
+        return controller
+    }
     
     /*
      // Override to support conditional editing of the table view.

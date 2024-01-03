@@ -51,9 +51,7 @@ class CategoryTableViewController: UITableViewController {
         }
         URLSession.shared.dataTask(with: beverageUrl) { data, response, error in
             if let data {
-                
                 do {
-                    
                     let content = try JSONDecoder().decode([Beverage].self, from: data)
                     self.menu = content
                     print("JSON Decode scccessful: ", self.menu)
@@ -65,7 +63,6 @@ class CategoryTableViewController: UITableViewController {
                 }
             }
         }.resume()
-        
     }
     
     

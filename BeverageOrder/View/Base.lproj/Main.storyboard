@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Category Table View Controller-->
+        <!--KEBUKE-->
         <scene sceneID="2sE-Nt-ozB">
             <objects>
                 <tableViewController id="lWI-YQ-r8g" customClass="CategoryTableViewController" customModule="BeverageOrder" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,13 +59,13 @@
                             <outlet property="delegate" destination="lWI-YQ-r8g" id="DQa-gI-6Zn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="emG-wr-GQj"/>
+                    <navigationItem key="navigationItem" title="KEBUKE" id="emG-wr-GQj"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Imu-kY-rqW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1177.8625954198474" y="-30.281690140845072"/>
         </scene>
-        <!--Beverage Table View Controller-->
+        <!--我要喝...-->
         <scene sceneID="d9c-7z-KiK">
             <objects>
                 <tableViewController id="Mnq-7L-GdE" customClass="BeverageTableViewController" customModule="BeverageOrder" customModuleProvider="target" sceneMemberID="viewController">
@@ -106,6 +106,7 @@
                                 <connections>
                                     <outlet property="beverageImage" destination="VSn-pG-riU" id="zCu-bg-k4X"/>
                                     <outlet property="beverageText" destination="x8S-Sp-oEv" id="tM8-7b-rjf"/>
+                                    <segue destination="4aY-H2-ueP" kind="show" destinationCreationSelector="beverageDetailChoose:" id="wAf-93-SkI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -114,26 +115,102 @@
                             <outlet property="delegate" destination="Mnq-7L-GdE" id="sMp-cM-yHC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cuz-tC-SSk"/>
+                    <navigationItem key="navigationItem" title="我要喝..." id="cuz-tC-SSk"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1b9-8H-Awk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1975" y="-30"/>
         </scene>
-        <!--View Controller-->
+        <!--為我特製-->
         <scene sceneID="bFV-tn-o8Z">
             <objects>
-                <viewController id="4aY-H2-ueP" sceneMemberID="viewController">
+                <viewController id="4aY-H2-ueP" customClass="DetailViewController" customModule="BeverageOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="89s-pO-E2F">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tEy-Yo-ssu">
+                                <rect key="frame" x="31" y="124" width="330" height="330"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="330" id="65T-JZ-ol1"/>
+                                    <constraint firstAttribute="height" constant="330" id="taU-bI-lnZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="飲料描述" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ik-m8-V20">
+                                <rect key="frame" x="5" y="503.99999999999994" width="383" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="BrownKEBUKE"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="飲料名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shp-Mf-aZz">
+                                <rect key="frame" x="146" y="459" width="101.33333333333331" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" name="BrownKEBUKE"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wH4-SN-H5S">
+                                <rect key="frame" x="32" y="578" width="329" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                </segments>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="36V-FF-m45">
+                                <rect key="frame" x="32" y="662" width="329" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                </segments>
+                            </segmentedControl>
+                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wwg-VO-KMz" userLabel="ice hot Segment">
+                                <rect key="frame" x="-1" y="662" width="395" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7Kn-PC-djC"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="LightBlueKEBUKE"/>
+                        <constraints>
+                            <constraint firstItem="wH4-SN-H5S" firstAttribute="centerX" secondItem="89s-pO-E2F" secondAttribute="centerX" id="Fkf-eX-adx"/>
+                            <constraint firstItem="wH4-SN-H5S" firstAttribute="top" secondItem="5Ik-m8-V20" secondAttribute="bottom" constant="53.670000000000002" id="JJu-Lb-w4U"/>
+                            <constraint firstItem="36V-FF-m45" firstAttribute="top" secondItem="wH4-SN-H5S" secondAttribute="bottom" constant="53" id="K2c-XU-kok"/>
+                            <constraint firstItem="7Kn-PC-djC" firstAttribute="trailing" secondItem="5Ik-m8-V20" secondAttribute="trailing" constant="5" id="Mk5-ot-GCD"/>
+                            <constraint firstItem="shp-Mf-aZz" firstAttribute="centerX" secondItem="89s-pO-E2F" secondAttribute="centerX" id="RHK-QX-bPl"/>
+                            <constraint firstItem="5Ik-m8-V20" firstAttribute="centerX" secondItem="89s-pO-E2F" secondAttribute="centerX" id="WIJ-cW-Wjt"/>
+                            <constraint firstItem="tEy-Yo-ssu" firstAttribute="top" secondItem="7Kn-PC-djC" secondAttribute="top" constant="21" id="Zrj-g7-e8z"/>
+                            <constraint firstItem="36V-FF-m45" firstAttribute="centerX" secondItem="89s-pO-E2F" secondAttribute="centerX" id="f1w-sJ-UVj"/>
+                            <constraint firstItem="5Ik-m8-V20" firstAttribute="leading" secondItem="7Kn-PC-djC" secondAttribute="leading" constant="5" id="fai-R8-8tT"/>
+                            <constraint firstItem="shp-Mf-aZz" firstAttribute="top" secondItem="tEy-Yo-ssu" secondAttribute="bottom" constant="5" id="i4C-VI-wTK"/>
+                            <constraint firstItem="tEy-Yo-ssu" firstAttribute="leading" secondItem="7Kn-PC-djC" secondAttribute="leading" constant="31" id="kvP-MO-lhf"/>
+                            <constraint firstItem="5Ik-m8-V20" firstAttribute="top" secondItem="shp-Mf-aZz" secondAttribute="bottom" constant="15" id="xdA-aa-fsI"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="為我特製" id="NKS-ph-pCR"/>
+                    <connections>
+                        <outlet property="beverageDescribe" destination="5Ik-m8-V20" id="DYk-NH-a5J"/>
+                        <outlet property="beverageImage" destination="tEy-Yo-ssu" id="EoS-B1-90O"/>
+                        <outlet property="beverageName" destination="shp-Mf-aZz" id="zfS-dN-viW"/>
+                        <outlet property="iceHotSegment" destination="wwg-VO-KMz" id="E6t-f2-FVC"/>
+                        <outlet property="iceSegment" destination="36V-FF-m45" id="wKE-je-ABh"/>
+                        <outlet property="sweetSegment" destination="wH4-SN-H5S" id="GW6-Nz-dXF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sW5-5e-kUE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2776" y="-30"/>
+            <point key="canvasLocation" x="2774.8091603053435" y="-30.281690140845072"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g6f-ey-v7s">
@@ -156,7 +233,7 @@
     </scenes>
     <resources>
         <namedColor name="BrownKEBUKE">
-            <color red="0.58039215686274503" green="0.50980392156862742" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.57999998331069946" green="0.50999999046325684" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LightBlueKEBUKE">
             <color red="0.0" green="0.24300000071525574" blue="0.32199999690055847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
