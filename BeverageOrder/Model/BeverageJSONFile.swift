@@ -17,19 +17,19 @@ struct Beverage: Codable {
 }
 
 struct Drink: Codable {
-    var name: String?
-    var info: Infos?
-    var picUrl: String?
+    var name: String
+    var info: Infos
+    var picUrl: String
 }
 
 struct Infos: Codable {
-    var M: String?
-    var L: String?
-    var description: String?
-    var hotAvailable: Bool?
+    var M: String
+    var L: String
+    var description: String
+    var hotAvailable: Bool
 }
 
 struct Topping: Codable {
-    var name: String?
-    var price: String?
+    var name: String
+    var price: String
 }

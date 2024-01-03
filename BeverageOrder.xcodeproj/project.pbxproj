@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		206D35FC2B440E3800260EF1 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D35FB2B440E3800260EF1 /* CategoryTableViewCell.swift */; };
+		206D35FF2B4416BC00260EF1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 206D35FE2B4416BC00260EF1 /* Kingfisher */; };
+		206D36012B44222F00260EF1 /* BeverageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D36002B44222F00260EF1 /* BeverageTableViewCell.swift */; };
+		206D36032B44224400260EF1 /* BeverageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D36022B44224400260EF1 /* BeverageTableViewController.swift */; };
 		2077A1D02B4157C1006AD869 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077A1CF2B4157C1006AD869 /* AppDelegate.swift */; };
 		2077A1D22B4157C1006AD869 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077A1D12B4157C1006AD869 /* SceneDelegate.swift */; };
 		2077A1D72B4157C1006AD869 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2077A1D52B4157C1006AD869 /* Main.storyboard */; };
@@ -17,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		206D35FB2B440E3800260EF1 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		206D36002B44222F00260EF1 /* BeverageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageTableViewCell.swift; sourceTree = "<group>"; };
+		206D36022B44224400260EF1 /* BeverageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageTableViewController.swift; sourceTree = "<group>"; };
 		2077A1CC2B4157C1006AD869 /* BeverageOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeverageOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2077A1CF2B4157C1006AD869 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2077A1D12B4157C1006AD869 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				206D35FF2B4416BC00260EF1 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				2077A1E52B415807006AD869 /* CategoryTableViewController.swift */,
+				206D35FB2B440E3800260EF1 /* CategoryTableViewCell.swift */,
+				206D36022B44224400260EF1 /* BeverageTableViewController.swift */,
+				206D36002B44222F00260EF1 /* BeverageTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -110,6 +121,9 @@
 			dependencies = (
 			);
 			name = BeverageOrder;
+			packageProductDependencies = (
+				206D35FE2B4416BC00260EF1 /* Kingfisher */,
+			);
 			productName = BeverageOrder;
 			productReference = 2077A1CC2B4157C1006AD869 /* BeverageOrder.app */;
 			productType = "com.apple.product-type.application";
@@ -138,6 +152,9 @@
 				Base,
 			);
 			mainGroup = 2077A1C32B4157C1006AD869;
+			packageReferences = (
+				206D35FD2B4416BC00260EF1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 2077A1CD2B4157C1006AD869 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -165,9 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				206D36012B44222F00260EF1 /* BeverageTableViewCell.swift in Sources */,
+				206D35FC2B440E3800260EF1 /* CategoryTableViewCell.swift in Sources */,
 				2077A1E42B4157E6006AD869 /* BeverageJSONFile.swift in Sources */,
 				2077A1D02B4157C1006AD869 /* AppDelegate.swift in Sources */,
 				2077A1D22B4157C1006AD869 /* SceneDelegate.swift in Sources */,
+				206D36032B44224400260EF1 /* BeverageTableViewController.swift in Sources */,
 				2077A1E62B415807006AD869 /* CategoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +406,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		206D35FD2B4416BC00260EF1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		206D35FE2B4416BC00260EF1 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 206D35FD2B4416BC00260EF1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2077A1C42B4157C1006AD869 /* Project object */;
 }

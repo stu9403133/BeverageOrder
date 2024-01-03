@@ -1,19 +1,20 @@
 //
-//  CategoryTableViewController.swift
+//  BeverageTableViewController.swift
 //  BeverageOrder
 //
-//  Created by stu on 2023/12/31.
+//  Created by stu on 2024/1/2.
 //
 
 import UIKit
+import Kingfisher
 
-class CategoryTableViewController: UITableViewController {
+class BeverageTableViewController: UITableViewController {
     
-    var menu = [Beverage]()
+    var beverageList = Beverage(category: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -23,15 +24,6 @@ class CategoryTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    @IBSegueAction func moveToBeverageList(_ coder: NSCoder) -> BeverageTableViewController? {
-        if let row = tableView.indexPathForSelectedRow?.row {
-            let controller = BeverageTableViewController(coder: coder)
-            controller?.beverageList = menu[row]
-            return controller
-        } else{
-            return nil
-        }   
-    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -40,45 +32,30 @@ class CategoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return menu.count-1
+        return beverageList.drinks!.count
     }
     
-    func fetchData() {
-        let beverageUrl = "https://raw.githubusercontent.com/lebonthe/JSON_API/main/kebukeMenu.json"
-        guard let beverageUrl = URL(string: beverageUrl) else {
-            print("JSON is nil")
-            return
-        }
-        URLSession.shared.dataTask(with: beverageUrl) { data, response, error in
-            if let data {
-                
-                do {
-                    
-                    let content = try JSONDecoder().decode([Beverage].self, from: data)
-                    self.menu = content
-                    print("JSON Decode scccessful: ", self.menu)
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                } catch {
-                    print("Decode fail: ", error)
-                }
-            }
-        }.resume()
-        
-    }
-    
+    //    func fetchBeveragePic() {
+    //
+    //    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "beverageCell", for: indexPath) as? CategoryTableViewCell
-        else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BeverageTableViewCell", for: indexPath) as? BeverageTableViewCell else
+        {
             fatalError("dequeueReusableCell LoverTableViewCell failed")
         }
-        let categoryList = menu[indexPath.row]
-        print("category table is: ", indexPath, categoryList)
-        cell.categoryText.text = categoryList.category
-        cell.categoryImage.image = UIImage(named: categoryPic[indexPath.row])
-        cell.categoryImage.backgroundColor = UIColor(named: "LightBlueKEBUKE")
+        
+        print(beverageList)
+        
+        let item = beverageList.drinks![indexPath.row]
+        cell.beverageText?.text = item.name
+        
+        if let picUrl = URLComponents(string: "\(item.picUrl)")?.url {
+            print("transfer string to url is successful: ", picUrl)
+            cell.beverageImage.kf.setImage(with: picUrl)
+        }else{
+            print("transfer string to url is failed", item.picUrl)
+        }
         // Configure the cell...
         return cell
     }
