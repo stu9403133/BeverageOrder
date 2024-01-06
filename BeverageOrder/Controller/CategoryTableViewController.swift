@@ -10,7 +10,6 @@ import UIKit
 class CategoryTableViewController: UITableViewController {
     
     var menu = [Beverage]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -55,6 +54,7 @@ class CategoryTableViewController: UITableViewController {
                     let content = try JSONDecoder().decode([Beverage].self, from: data)
                     self.menu = content
                     print("JSON Decode scccessful: ", self.menu)
+                    print(userInfo)
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }

@@ -19,6 +19,8 @@
 		2077A1DC2B4157C3006AD869 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2077A1DA2B4157C3006AD869 /* LaunchScreen.storyboard */; };
 		2077A1E42B4157E6006AD869 /* BeverageJSONFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077A1E32B4157E6006AD869 /* BeverageJSONFile.swift */; };
 		2077A1E62B415807006AD869 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077A1E52B415807006AD869 /* CategoryTableViewController.swift */; };
+		207DA4932B469E320063067F /* BeverageEncodableJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207DA4922B469E320063067F /* BeverageEncodableJSON.swift */; };
+		207DA4952B469EEB0063067F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207DA4942B469EEB0063067F /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		2077A1DD2B4157C3006AD869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2077A1E32B4157E6006AD869 /* BeverageJSONFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageJSONFile.swift; sourceTree = "<group>"; };
 		2077A1E52B415807006AD869 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		207DA4922B469E320063067F /* BeverageEncodableJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageEncodableJSON.swift; sourceTree = "<group>"; };
+		207DA4942B469EEB0063067F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				2077A1E32B4157E6006AD869 /* BeverageJSONFile.swift */,
+				207DA4922B469E320063067F /* BeverageEncodableJSON.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 		2091C71E2B43F2860006F4E5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				207DA4942B469EEB0063067F /* LoginViewController.swift */,
 				2077A1E52B415807006AD869 /* CategoryTableViewController.swift */,
 				206D35FB2B440E3800260EF1 /* CategoryTableViewCell.swift */,
 				206D36022B44224400260EF1 /* BeverageTableViewController.swift */,
@@ -185,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				207DA4932B469E320063067F /* BeverageEncodableJSON.swift in Sources */,
 				206D36012B44222F00260EF1 /* BeverageTableViewCell.swift in Sources */,
 				206D35FC2B440E3800260EF1 /* CategoryTableViewCell.swift in Sources */,
 				2077A1E42B4157E6006AD869 /* BeverageJSONFile.swift in Sources */,
@@ -192,6 +199,7 @@
 				2077A1D22B4157C1006AD869 /* SceneDelegate.swift in Sources */,
 				206D36032B44224400260EF1 /* BeverageTableViewController.swift in Sources */,
 				2077A1E62B415807006AD869 /* CategoryTableViewController.swift in Sources */,
+				207DA4952B469EEB0063067F /* LoginViewController.swift in Sources */,
 				206D36052B456A0700260EF1 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

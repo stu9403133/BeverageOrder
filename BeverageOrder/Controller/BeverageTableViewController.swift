@@ -11,8 +11,6 @@ import Kingfisher
 class BeverageTableViewController: UITableViewController {
     
     var beverageList = Beverage(category: "")
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,28 +38,32 @@ class BeverageTableViewController: UITableViewController {
     //
     //    }
     
+    // 產生TableView中cell的function
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BeverageTableViewCell", for: indexPath) as? BeverageTableViewCell else
         {
             fatalError("dequeueReusableCell LoverTableViewCell failed")
         }
         
+        // 利用print可以在小視窗檢查資料是否有成功呈現
         print(beverageList)
         
+        //設定每個cell 的飲料名稱
         let item = beverageList.drinks![indexPath.row]
         cell.beverageText?.text = item.name
         
+        // 抓網路圖片
         if let picUrl = URLComponents(string: "\(item.picUrl)")?.url {
             print("transfer string to url is successful: ", picUrl)
             cell.beverageImage.kf.setImage(with: picUrl)
         }else{
             print("transfer string to url is failed", item.picUrl)
         }
-        // Configure the cell...
+        
         return cell
     }
     
-    @IBSegueAction func beverageDetailChoose(_ coder: NSCoder) -> DetailViewController? {
+    @IBSegueAction func beverageCustomized(_ coder: NSCoder) -> DetailViewController? {
         var controller = DetailViewController(coder: coder)
         if let row = tableView.indexPathForSelectedRow?.row {
             controller?.beverageDetail = beverageList.drinks![row]
@@ -69,6 +71,7 @@ class BeverageTableViewController: UITableViewController {
         print("send data is successful", controller?.beverageDetail ?? nil)
         return controller
     }
+    
     
     /*
      // Override to support conditional editing of the table view.

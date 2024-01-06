@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PJv-P3-Nng">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pxz-yl-4kG">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -32,8 +32,8 @@
                                                 <constraint firstAttribute="height" constant="128" id="hQv-zn-ztC"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3e-Oy-Whq">
-                                            <rect key="frame" x="144" y="65" width="249" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3e-Oy-Whq">
+                                            <rect key="frame" x="144" y="65" width="41.333333333333343" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="BrownKEBUKE"/>
                                             <nil key="highlightedColor"/>
@@ -63,7 +63,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Imu-kY-rqW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177.8625954198474" y="-30.281690140845072"/>
+            <point key="canvasLocation" x="2104.5801526717555" y="-30.281690140845072"/>
         </scene>
         <!--我要喝...-->
         <scene sceneID="d9c-7z-KiK">
@@ -88,8 +88,8 @@
                                                 <constraint firstAttribute="width" constant="128" id="cw3-gW-OX2"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8S-Sp-oEv">
-                                            <rect key="frame" x="144" y="65" width="249" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8S-Sp-oEv">
+                                            <rect key="frame" x="144" y="65" width="48" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" name="BrownKEBUKE"/>
                                             <nil key="highlightedColor"/>
@@ -106,7 +106,7 @@
                                 <connections>
                                     <outlet property="beverageImage" destination="VSn-pG-riU" id="zCu-bg-k4X"/>
                                     <outlet property="beverageText" destination="x8S-Sp-oEv" id="tM8-7b-rjf"/>
-                                    <segue destination="4aY-H2-ueP" kind="show" destinationCreationSelector="beverageDetailChoose:" id="wAf-93-SkI"/>
+                                    <segue destination="4aY-H2-ueP" kind="show" destinationCreationSelector="beverageCustomized:" id="zh7-y4-ptB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -119,7 +119,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1b9-8H-Awk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1975" y="-30"/>
+            <point key="canvasLocation" x="2901.5267175572517" y="-30.281690140845072"/>
         </scene>
         <!--為我特製-->
         <scene sceneID="bFV-tn-o8Z">
@@ -129,27 +129,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tEy-Yo-ssu">
-                                <rect key="frame" x="31" y="124" width="330" height="330"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="330" id="65T-JZ-ol1"/>
-                                    <constraint firstAttribute="height" constant="330" id="taU-bI-lnZ"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tEy-Yo-ssu">
+                                <rect key="frame" x="86" y="103" width="219.99999999999997" height="220"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="飲料描述" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ik-m8-V20">
-                                <rect key="frame" x="5" y="503.99999999999994" width="383" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="BrownKEBUKE"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="飲料名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shp-Mf-aZz">
-                                <rect key="frame" x="146" y="459" width="101.33333333333331" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="飲料名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shp-Mf-aZz">
+                                <rect key="frame" x="141" y="331" width="101.33333333333331" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" name="BrownKEBUKE"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wH4-SN-H5S">
-                                <rect key="frame" x="32" y="578" width="329" height="32"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wH4-SN-H5S">
+                                <rect key="frame" x="32" y="489" width="329" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
@@ -158,8 +151,9 @@
                                     <segment title=""/>
                                 </segments>
                             </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="36V-FF-m45">
-                                <rect key="frame" x="32" y="662" width="329" height="32"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="36V-FF-m45">
+                                <rect key="frame" x="32" y="566" width="329" height="31.999999999999943"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
@@ -168,8 +162,36 @@
                                     <segment title=""/>
                                 </segments>
                             </segmentedControl>
-                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wwg-VO-KMz" userLabel="ice hot Segment">
-                                <rect key="frame" x="-1" y="662" width="395" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wiz-8p-vZO">
+                                <rect key="frame" x="155" y="654" width="101" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" name="BrownKEBUKE"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNZ-V0-7n1">
+                                <rect key="frame" x="136" y="734" width="120" height="34.333333333333371"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" name="BrownKEBUKE"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="paperplane.fill" catalog="system" title="確認送出"/>
+                                <connections>
+                                    <action selector="sendOrder:" destination="4aY-H2-ueP" eventType="touchUpInside" id="Wiu-R7-VTy"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lNc-BA-hyy">
+                                <rect key="frame" x="161" y="443" width="61" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="M"/>
+                                    <segment title="L"/>
+                                </segments>
+                                <connections>
+                                    <action selector="choicesize:" destination="4aY-H2-ueP" eventType="valueChanged" id="egJ-Lr-UAU"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CgK-c8-lhg" userLabel="iceHotSegment">
+                                <rect key="frame" x="4" y="567" width="385" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="First"/>
@@ -180,60 +202,138 @@
                                     <segment title=""/>
                                 </segments>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="飲料描述" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ik-m8-V20">
+                                <rect key="frame" x="4" y="381" width="385" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="BrownKEBUKE"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Kn-PC-djC"/>
                         <color key="backgroundColor" name="LightBlueKEBUKE"/>
-                        <constraints>
-                            <constraint firstItem="wH4-SN-H5S" firstAttribute="centerX" secondItem="89s-pO-E2F" secondAttribute="centerX" id="Fkf-eX-adx"/>
-                            <constraint firstItem="wH4-SN-H5S" firstAttribute="top" secondItem="5Ik-m8-V20" secondAttribute="bottom" constant="53.670000000000002" id="JJu-Lb-w4U"/>
-                            <constraint firstItem="36V-FF-m45" firstAttribute="top" secondItem="wH4-SN-H5S" secondAttribute="bottom" constant="53" id="K2c-XU-kok"/>
-                            <constraint firstItem="7Kn-PC-djC" firstAttribute="trailing" secondItem="5Ik-m8-V20" secondAttribute="trailing" constant="5" id="Mk5-ot-GCD"/>
-                            <constraint firstItem="shp-Mf-aZz" firstAttribute="centerX" secondItem="89s-pO-E2F" secondAttribute="centerX" id="RHK-QX-bPl"/>
-                            <constraint firstItem="5Ik-m8-V20" firstAttribute="centerX" secondItem="89s-pO-E2F" secondAttribute="centerX" id="WIJ-cW-Wjt"/>
-                            <constraint firstItem="tEy-Yo-ssu" firstAttribute="top" secondItem="7Kn-PC-djC" secondAttribute="top" constant="21" id="Zrj-g7-e8z"/>
-                            <constraint firstItem="36V-FF-m45" firstAttribute="centerX" secondItem="89s-pO-E2F" secondAttribute="centerX" id="f1w-sJ-UVj"/>
-                            <constraint firstItem="5Ik-m8-V20" firstAttribute="leading" secondItem="7Kn-PC-djC" secondAttribute="leading" constant="5" id="fai-R8-8tT"/>
-                            <constraint firstItem="shp-Mf-aZz" firstAttribute="top" secondItem="tEy-Yo-ssu" secondAttribute="bottom" constant="5" id="i4C-VI-wTK"/>
-                            <constraint firstItem="tEy-Yo-ssu" firstAttribute="leading" secondItem="7Kn-PC-djC" secondAttribute="leading" constant="31" id="kvP-MO-lhf"/>
-                            <constraint firstItem="5Ik-m8-V20" firstAttribute="top" secondItem="shp-Mf-aZz" secondAttribute="bottom" constant="15" id="xdA-aa-fsI"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="為我特製" id="NKS-ph-pCR"/>
                     <connections>
                         <outlet property="beverageDescribe" destination="5Ik-m8-V20" id="DYk-NH-a5J"/>
                         <outlet property="beverageImage" destination="tEy-Yo-ssu" id="EoS-B1-90O"/>
                         <outlet property="beverageName" destination="shp-Mf-aZz" id="zfS-dN-viW"/>
-                        <outlet property="iceHotSegment" destination="wwg-VO-KMz" id="E6t-f2-FVC"/>
+                        <outlet property="beveragePrice" destination="Wiz-8p-vZO" id="VPy-Fc-fCR"/>
+                        <outlet property="iceHotSegment" destination="CgK-c8-lhg" id="re3-nH-kKP"/>
                         <outlet property="iceSegment" destination="36V-FF-m45" id="wKE-je-ABh"/>
+                        <outlet property="sizeSegment" destination="lNc-BA-hyy" id="H4b-vn-W0P"/>
                         <outlet property="sweetSegment" destination="wH4-SN-H5S" id="GW6-Nz-dXF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sW5-5e-kUE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2774.8091603053435" y="-30.281690140845072"/>
+            <point key="canvasLocation" x="3707.6335877862593" y="-30.281690140845072"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
+        <scene sceneID="DzN-6b-Xyn">
+            <objects>
+                <viewController id="CIF-sY-bdZ" customClass="LoginViewController" customModule="BeverageOrder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SjK-8d-7O1">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="英文名稱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gSd-Sm-NwH">
+                                <rect key="frame" x="98" y="282" width="197" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                <connections>
+                                    <action selector="closeKeyboard:" destination="CIF-sY-bdZ" eventType="editingDidEndOnExit" id="evr-ug-kav"/>
+                                    <action selector="showButton:" destination="CIF-sY-bdZ" eventType="editingDidEnd" id="Xei-26-gCK"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="請輸入姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEh-di-bhf">
+                                <rect key="frame" x="123" y="208" width="147" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" name="BrownKEBUKE"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phh-P2-EFM">
+                                <rect key="frame" x="159" y="560" width="76" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" name="BrownKEBUKE"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="訂飲料"/>
+                                <connections>
+                                    <segue destination="lWI-YQ-r8g" kind="show" destinationCreationSelector="sendUserInfo:" id="Mtv-7Q-vg1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="I23-GO-lGe"/>
+                        <color key="backgroundColor" name="DarkBlueKEBUKE"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="v0W-mA-dBB" appends="YES" id="exF-Xb-3QY"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="og8-d2-i2P"/>
+                    <navigationItem key="navigationItem" id="Xsd-nh-xcg"/>
+                    <connections>
+                        <outlet property="orderButton" destination="Phh-P2-EFM" id="ZJw-C3-pt8"/>
+                        <outlet property="textName" destination="gSd-Sm-NwH" id="CJ6-cL-gKH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tnT-Zp-UkH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="v0W-mA-dBB">
+                    <connections>
+                        <action selector="tapViewCloseKeyboard:" destination="CIF-sY-bdZ" id="N01-sL-fIj"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1393" y="-30"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="g6f-ey-v7s">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PJv-P3-Nng" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="a3K-hw-GH2"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="C6r-0g-nza"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UVi-wO-yr7">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="lWI-YQ-r8g" kind="relationship" relationship="rootViewController" id="RMY-xB-x8t"/>
+                        <segue destination="CIF-sY-bdZ" kind="relationship" relationship="rootViewController" id="Cj3-vN-Crr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cF1-PY-4Ed" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="354.96183206106866" y="-29.577464788732396"/>
+            <point key="canvasLocation" x="685" y="-30"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Ar2-Lf-Alf">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="pxz-yl-4kG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="f9I-54-tXq"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wNm-Up-C5I">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="PJv-P3-Nng" kind="relationship" relationship="viewControllers" id="52e-1X-qH3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RTr-zT-UvL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-60" y="-535"/>
         </scene>
     </scenes>
     <resources>
+        <image name="paperplane.fill" catalog="system" width="128" height="119"/>
         <namedColor name="BrownKEBUKE">
             <color red="0.57999998331069946" green="0.50999999046325684" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkBlueKEBUKE">
+            <color red="0.059000000357627869" green="0.18400000035762787" blue="0.23899999260902405" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="LightBlueKEBUKE">
             <color red="0.0" green="0.24300000071525574" blue="0.32199999690055847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
