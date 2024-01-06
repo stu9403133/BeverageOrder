@@ -24,6 +24,7 @@ struct OrderInfo: Encodable {
     var size: String
     var price: String
     var userID: UUID
+    var picURL: String
 }
 
-var userInfo = BeverageOrder(records: [Records(fields: OrderInfo(name: "", beverage: "", sweetLevel: "", iceLevel: "", size: "", price: "", userID: UUID()))])
+var userInfo = BeverageOrder(records: [Records(fields: OrderInfo(name: "", beverage: "", sweetLevel: "", iceLevel: "", size: "", price: "", userID: UUID(), picURL: ""))])

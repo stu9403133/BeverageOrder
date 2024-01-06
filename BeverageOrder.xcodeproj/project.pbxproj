@@ -12,6 +12,9 @@
 		206D36012B44222F00260EF1 /* BeverageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D36002B44222F00260EF1 /* BeverageTableViewCell.swift */; };
 		206D36032B44224400260EF1 /* BeverageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D36022B44224400260EF1 /* BeverageTableViewController.swift */; };
 		206D36052B456A0700260EF1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D36042B456A0700260EF1 /* DetailViewController.swift */; };
+		206F72592B48F137008314D7 /* ReviceOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F72582B48F137008314D7 /* ReviceOrderTableViewController.swift */; };
+		206F725B2B48F15E008314D7 /* ReviceOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F725A2B48F15E008314D7 /* ReviceOrderTableViewCell.swift */; };
+		206F725D2B48F482008314D7 /* ShouldReviceOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F725C2B48F482008314D7 /* ShouldReviceOrder.swift */; };
 		2077A1D02B4157C1006AD869 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077A1CF2B4157C1006AD869 /* AppDelegate.swift */; };
 		2077A1D22B4157C1006AD869 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077A1D12B4157C1006AD869 /* SceneDelegate.swift */; };
 		2077A1D72B4157C1006AD869 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2077A1D52B4157C1006AD869 /* Main.storyboard */; };
@@ -28,6 +31,9 @@
 		206D36002B44222F00260EF1 /* BeverageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageTableViewCell.swift; sourceTree = "<group>"; };
 		206D36022B44224400260EF1 /* BeverageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageTableViewController.swift; sourceTree = "<group>"; };
 		206D36042B456A0700260EF1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		206F72582B48F137008314D7 /* ReviceOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviceOrderTableViewController.swift; sourceTree = "<group>"; };
+		206F725A2B48F15E008314D7 /* ReviceOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviceOrderTableViewCell.swift; sourceTree = "<group>"; };
+		206F725C2B48F482008314D7 /* ShouldReviceOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShouldReviceOrder.swift; sourceTree = "<group>"; };
 		2077A1CC2B4157C1006AD869 /* BeverageOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeverageOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2077A1CF2B4157C1006AD869 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2077A1D12B4157C1006AD869 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +116,9 @@
 				206D36022B44224400260EF1 /* BeverageTableViewController.swift */,
 				206D36002B44222F00260EF1 /* BeverageTableViewCell.swift */,
 				206D36042B456A0700260EF1 /* DetailViewController.swift */,
+				206F72582B48F137008314D7 /* ReviceOrderTableViewController.swift */,
+				206F725A2B48F15E008314D7 /* ReviceOrderTableViewCell.swift */,
+				206F725C2B48F482008314D7 /* ShouldReviceOrder.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -199,7 +208,10 @@
 				2077A1D22B4157C1006AD869 /* SceneDelegate.swift in Sources */,
 				206D36032B44224400260EF1 /* BeverageTableViewController.swift in Sources */,
 				2077A1E62B415807006AD869 /* CategoryTableViewController.swift in Sources */,
+				206F72592B48F137008314D7 /* ReviceOrderTableViewController.swift in Sources */,
 				207DA4952B469EEB0063067F /* LoginViewController.swift in Sources */,
+				206F725D2B48F482008314D7 /* ShouldReviceOrder.swift in Sources */,
+				206F725B2B48F15E008314D7 /* ReviceOrderTableViewCell.swift in Sources */,
 				206D36052B456A0700260EF1 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

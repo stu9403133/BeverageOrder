@@ -9,9 +9,12 @@ import UIKit
 import Kingfisher
 
 class DetailViewController: UIViewController {
+    
     var beverageDetail = Drink(name: "", info: Infos(M: "", L: "", description: "", hotAvailable: true), picUrl: "")
     
     // /UUID().uuidString
+    
+    var isSendOrder = false
     
     @IBOutlet weak var beverageImage: UIImageView!
     
@@ -52,19 +55,32 @@ class DetailViewController: UIViewController {
     @IBAction func sendOrder(_ sender: Any) {
         userInfo.records[0].fields.beverage = beverageDetail.name
         userInfo.records[0].fields.sweetLevel = sugarLevelArray[sweetSegment.selectedSegmentIndex]
+        userInfo.records[0].fields.picURL = beverageDetail.picUrl
         if iceSegment.isHidden {
             userInfo.records[0].fields.iceLevel = iceHotLevelArray[iceHotSegment.selectedSegmentIndex]
         } else {
             userInfo.records[0].fields.iceLevel = iceLevelArray[iceSegment.selectedSegmentIndex]
         }
         print(userInfo)
-        URLSession.shared.dataTask(with: uploadData()) { data, response, error in
-            if let data,
-               let content = String(data: data, encoding: .utf8){
-                print(content)
-            }
-        }.resume()
+       
+        let alertViewController = UIAlertController(title: "訂單即將送出", message: "請最後確認", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) {_ in
+            URLSession.shared.dataTask(with: self.uploadData()) { data, response, error in
+                if let data,
+                   let content = String(data: data, encoding: .utf8){
+                    print("update data is successful: ", content)
+                }
+            }.resume()
+            self.performSegue(withIdentifier: "unwindToCategoryLIst", sender: nil)
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel)
+        alertViewController.addAction(okAction)
+        alertViewController.addAction(cancelAction)
+        present(alertViewController, animated: true)
     }
+    
+
+    
     
     func uploadData() -> URLRequest {
         let uploadUrl = URL(string: "https://api.airtable.com/v0/appYbpFNsDs7f2F3b/Table%201")!
@@ -80,13 +96,18 @@ class DetailViewController: UIViewController {
     
     
     func updateUI() {
+        if sizeSegment.selectedSegmentIndex == 0 {
+            beveragePrice.text = beverageDetail.info.M
+            userInfo.records[0].fields.price = beverageDetail.info.M
+            userInfo.records[0].fields.size = "M"
+        }
         beveragePrice.text = beverageDetail.info.M
         fetchData()
         beverageName.text = beverageDetail.name
         beverageDescribe.text = beverageDetail.info.description
         updateSweetLevel()
         updateIceLevel()
-        sizeSegment.setTitleTextAttributes([.foregroundColor: UIColor(named: "BrownKEBUKE")], for: .normal)
+        sizeSegment.setTitleTextAttributes([.foregroundColor: UIColor(named: "BrownKEBUKE")!], for: .normal)
     }
     
     
@@ -104,14 +125,14 @@ class DetailViewController: UIViewController {
             iceSegment.isHidden = true
             for i in 0...5 {
                 iceHotSegment.setTitle("\(iceHotLevelArray[i])", forSegmentAt: i)
-                iceHotSegment.setTitleTextAttributes([.foregroundColor: UIColor(named: "BrownKEBUKE")], for: .normal)
+                iceHotSegment.setTitleTextAttributes([.foregroundColor: UIColor(named: "BrownKEBUKE")!], for: .normal)
             }
         } else {
             iceHotSegment.isHidden = true
             iceSegment.isHidden = false
             for i in 0...4 {
                 iceSegment.setTitle("\(iceLevelArray[i])", forSegmentAt: i)
-                iceSegment.setTitleTextAttributes([.foregroundColor: UIColor(named: "BrownKEBUKE")], for: .normal)
+                iceSegment.setTitleTextAttributes([.foregroundColor: UIColor(named: "BrownKEBUKE")!], for: .normal)
             }
         }
     }
