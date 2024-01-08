@@ -45,33 +45,34 @@ class ReviceOrderTableViewCell: UITableViewCell {
             reviceSizeSegment.selectedSegmentIndex = 1
         }
         
-        //該改甜度
-        //        reviceSweetLevel.menu = UIMenu()
-        //        for i in 0...sugarLevelArray.count-1 {
-        //            reviceSweetLevel.menu?.children.insert(contentsOf: [UIAction(title: "\(sugarLevelArray[i])", handler: { UIAction in userInfo.records[0].fields.sweetLevel = sugarLevelArray[i]
-        //            })], at: i)
-        //        }
-        
+        //更改甜度
+        reviceSweetLevel.changesSelectionAsPrimaryAction = true
+        reviceSweetLevel.showsMenuAsPrimaryAction = true
+        reviceSweetLevel.menu = UIMenu(children: madeMenuArray(titleArray: sugarLevelArray, defaultString: userInfo.records[0].fields.sweetLevel))
+                
         // 更改冰塊
-            reviceIceLevel.changesSelectionAsPrimaryAction = true
-            reviceIceLevel.showsMenuAsPrimaryAction = true
+        reviceIceLevel.changesSelectionAsPrimaryAction = true
+        reviceIceLevel.showsMenuAsPrimaryAction = true
         if userInfo.records[0].fields.iceLevel == "熱" {
-            reviceIceLevel.menu = UIMenu(children: madeMenuArray(titleArray: iceHotLevelArray))
-        }else {
-            reviceIceLevel.setTitle("\(userInfo.records[0].fields.iceLevel)", for: .normal)
-            reviceIceLevel.menu = UIMenu(children: madeMenuArray(titleArray: iceLevelArray))
+            reviceIceLevel.menu = UIMenu(children: madeMenuArray(titleArray: iceHotLevelArray, defaultString: userInfo.records[0].fields.iceLevel))
+        } else {
+            reviceIceLevel.menu = UIMenu(children: madeMenuArray(titleArray: iceLevelArray, defaultString: userInfo.records[0].fields.iceLevel))
         }
     }
     
     
-    func madeMenuArray(titleArray: [String]) -> [UIAction] {
+    func madeMenuArray(titleArray: [String], defaultString: String) -> [UIAction] {
         // handler設定為function型別的變數，再存入[UIAction]之中
         var menuArray = [UIAction]()
         for i in 0...titleArray.count-1 {
-            menuArray.append(UIAction(title: "\(titleArray[i])",state: .on, handler: { UIAction in
+            //利用回圈去製作menu中每一個button選項，預設handler都為.off
+            menuArray.append(UIAction(title: "\(titleArray[i])", state: .off, handler: { UIAction in
                 userInfo.records[0].fields.iceLevel = titleArray[i]
             }))
-            
+        }
+        
+        if let num = titleArray.firstIndex(of: defaultString) {
+            menuArray[num].state = .on
         }
         return menuArray
     }

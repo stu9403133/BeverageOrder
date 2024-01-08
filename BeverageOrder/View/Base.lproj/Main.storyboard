@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pxz-yl-4kG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PJv-P3-Nng">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -66,7 +66,7 @@
                                 <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system"/>
                                 <connections>
                                     <segue destination="uhY-wZ-tct" kind="presentation" identifier="shouldGoToReviceOrder" id="yh1-0i-29U"/>
                                 </connections>
@@ -107,8 +107,8 @@
                                             <rect key="frame" x="20" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="39u-uA-QjU">
-                                            <rect key="frame" x="223" y="79" width="48" height="34"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="39u-uA-QjU">
+                                            <rect key="frame" x="227" y="81" width="50" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <menu key="menu" id="gcV-ae-TeC">
                                                 <children>
@@ -119,7 +119,7 @@
                                             <state key="normal" title="Button"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aay-u6-YBX">
-                                            <rect key="frame" x="226" y="119" width="41" height="30"/>
+                                            <rect key="frame" x="226" y="119" width="50" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <menu key="menu" id="3vk-d2-9yE">
                                                 <children>
@@ -223,7 +223,7 @@
                                 <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system"/>
                                 <connections>
                                     <segue destination="uhY-wZ-tct" kind="presentation" identifier="shouldGoToReviceOrder" id="TL4-mS-k9V"/>
                                 </connections>
@@ -390,7 +390,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="og8-d2-i2P"/>
                     <navigationItem key="navigationItem" id="Xsd-nh-xcg"/>
                     <connections>
-                        <outlet property="orderButton" destination="Phh-P2-EFM" id="ZJw-C3-pt8"/>
+                        <outlet property="orderButton" destination="Phh-P2-EFM" id="Q5J-MA-dIm"/>
                         <outlet property="textName" destination="gSd-Sm-NwH" id="CJ6-cL-gKH"/>
                     </connections>
                 </viewController>
@@ -423,25 +423,6 @@
             </objects>
             <point key="canvasLocation" x="685" y="-30"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="Ar2-Lf-Alf">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="pxz-yl-4kG" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="f9I-54-tXq"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wNm-Up-C5I">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="PJv-P3-Nng" kind="relationship" relationship="viewControllers" id="52e-1X-qH3"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RTr-zT-UvL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-60" y="-535"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="bXq-pK-y3l">
             <objects>
@@ -462,11 +443,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yh1-0i-29U"/>
+        <segue reference="TL4-mS-k9V"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
         <image name="paperplane.fill" catalog="system" width="128" height="119"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
         <namedColor name="BrownKEBUKE">
             <color red="0.57999998331069946" green="0.50999999046325684" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -64,14 +64,29 @@ class BeverageTableViewController: UITableViewController {
     }
     
     @IBSegueAction func beverageCustomized(_ coder: NSCoder) -> DetailViewController? {
-        var controller = DetailViewController(coder: coder)
+        let controller = DetailViewController(coder: coder)
         if let row = tableView.indexPathForSelectedRow?.row {
             controller?.beverageDetail = beverageList.drinks![row]
         }
-        print("send data is successful", controller?.beverageDetail ?? nil)
+        print("send data is successful", controller?.beverageDetail ?? "send failed")
         return controller
     }
     
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if sender is UIButton{
+            if shouldReviceOrder(){
+                return true
+            } else {
+                let alertNoOrderController = UIAlertController(title: "你還沒有訂單喔", message: "請繼續點餐", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "ok", style: .default)
+                alertNoOrderController.addAction(okAction)
+                present(alertNoOrderController, animated: true)
+                return false
+            }
+        }
+        return true
+    }
     
     /*
      // Override to support conditional editing of the table view.
