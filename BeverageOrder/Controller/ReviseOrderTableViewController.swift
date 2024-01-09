@@ -13,7 +13,7 @@ class ReviceOrderTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,6 +23,7 @@ class ReviceOrderTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    
     
     @IBAction func saveOrder(_ sender: Any) {
         performSegue(withIdentifier: segueID, sender: nil)
@@ -49,6 +50,16 @@ class ReviceOrderTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        userInfo.records.remove(at: indexPath.row)
+        
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+        
+        tableView.reloadData()
+        userInfo = BeverageOrder(records: [Records(fields: OrderInfo(name: "", beverage: "", sweetLevel: "", iceLevel: "", size: "", price: "", userID: UUID(), picURL: ""))])
+        
+    }
     
     
 
