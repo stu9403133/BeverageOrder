@@ -49,7 +49,7 @@ class ReviceOrderTableViewCell: UITableViewCell {
         reviceSweetLevel.changesSelectionAsPrimaryAction = true
         reviceSweetLevel.showsMenuAsPrimaryAction = true
         reviceSweetLevel.menu = UIMenu(children: madeMenuArray(titleArray: sugarLevelArray, defaultString: userInfo.records[0].fields.sweetLevel))
-                
+        
         // 更改冰塊
         reviceIceLevel.changesSelectionAsPrimaryAction = true
         reviceIceLevel.showsMenuAsPrimaryAction = true
@@ -84,5 +84,7 @@ class ReviceOrderTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
+    
+    
     
 }

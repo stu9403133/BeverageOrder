@@ -16,7 +16,7 @@ struct Records: Encodable {
     var fields: OrderInfo
 }
 
-struct OrderInfo: Encodable {
+struct OrderInfo: Codable {
     var name: String
     var beverage: String
     var sweetLevel: String
@@ -25,6 +25,21 @@ struct OrderInfo: Encodable {
     var price: String
     var userID: UUID
     var picURL: String
+}
+
+struct BeverageOrdered:Codable {
+    let id: String
+    let createdTime: String
+    let fields: OrderInfo
+}
+
+struct DeleteOrder:Codable {
+    var records: [OrderID]
+    
+    struct OrderID:Codable {
+        var id: String
+        var deleted: Bool
+    }
 }
 
 var userInfo = BeverageOrder(records: [Records(fields: OrderInfo(name: "", beverage: "", sweetLevel: "", iceLevel: "", size: "", price: "", userID: UUID(), picURL: ""))])

@@ -9,6 +9,8 @@ import UIKit
 
 class ReviceOrderTableViewController: UITableViewController {
 
+    var segueID: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +23,13 @@ class ReviceOrderTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    
+    @IBAction func saveOrder(_ sender: Any) {
+        performSegue(withIdentifier: segueID, sender: nil)
+    }
+    
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -33,12 +42,14 @@ class ReviceOrderTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviceOrderTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviseOrderTableViewCell", for: indexPath)
      
         // Configure the cell...
 
         return cell
     }
+    
+    
     
 
     /*

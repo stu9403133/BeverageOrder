@@ -63,9 +63,14 @@ class DetailViewController: UIViewController {
         }
         print(userInfo)
        
-        let alertViewController = UIAlertController(title: "訂單即將送出", message: "請最後確認", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) {_ in
-            URLSession.shared.dataTask(with: self.uploadData()) { data, response, error in
+        let sendAlertController = createAlert(alertTitle: "訂單即將送出", alertMessage: "請最後確認", alertOkAction: "OK", alertCancelAction: "取消")
+        present(sendAlertController, animated: true)
+    }
+    
+    func createAlert(alertTitle: String, alertMessage: String, alertOkAction: String, alertCancelAction: String) -> UIAlertController {
+        let alertViewController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: alertOkAction, style: .default) {_ in
+            URLSession.shared.dataTask(with: urlRequestOfUploadData(userIfno: userInfo)) { data, response, error in
                 if let data,
                    let content = String(data: data, encoding: .utf8){
                     print("update data is successful: ", content)
@@ -73,49 +78,48 @@ class DetailViewController: UIViewController {
             }.resume()
             self.performSegue(withIdentifier: "unwindToCategoryLIst", sender: nil)
         }
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel)
+        let cancelAction = UIAlertAction(title: alertCancelAction, style: .cancel)
         alertViewController.addAction(okAction)
         alertViewController.addAction(cancelAction)
-        present(alertViewController, animated: true)
+        return alertViewController
     }
     
 
-    
-    
-    func uploadData() -> URLRequest {
-        let uploadUrl = URL(string: "https://api.airtable.com/v0/appYbpFNsDs7f2F3b/Table%201")!
-        var urlRequest = URLRequest(url: uploadUrl)
-        urlRequest.setValue("Bearer patZesgpzGmOo9ujp.508da6a245bad1153aa593349673a0a417c7350fef028d6dc7be1a235c961305", forHTTPHeaderField: "Authorization")
-        urlRequest.httpMethod = "POST"
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let encoder = JSONEncoder()
-        urlRequest.httpBody = try? encoder.encode(userInfo)
-        print(urlRequest.httpBody!)
-        return urlRequest
+    func updateUI() {
+        // 抓取飲料圖片，並更新在UI上
+        fetchData()
+        // 更新UI的飲料名稱與飲料描述
+        beverageName.text = beverageDetail.name
+        beverageDescribe.text = beverageDetail.info.description
+        // 自定義更新甜度冰塊與size的UI
+        updateSizeSegment()
+        updateSweetLevel()
+        updateIceLevel()
+        // 更新UI的價錢
+        beveragePrice.text = beverageDetail.info.M
     }
     
+    func fetchData() {
+        if let beverageUrl = URLComponents(string: "\(beverageDetail.picUrl)")?.url {
+            beverageImage.kf.setImage(with: beverageUrl)
+        }
+    }
     
-    func updateUI() {
+    func updateSizeSegment() {
         if sizeSegment.selectedSegmentIndex == 0 {
             beveragePrice.text = beverageDetail.info.M
             userInfo.records[0].fields.price = beverageDetail.info.M
             userInfo.records[0].fields.size = "M"
         }
-        beveragePrice.text = beverageDetail.info.M
-        fetchData()
-        beverageName.text = beverageDetail.name
-        beverageDescribe.text = beverageDetail.info.description
-        updateSweetLevel()
-        updateIceLevel()
-        sizeSegment.setTitleTextAttributes([.foregroundColor: UIColor(named: "BrownKEBUKE")!], for: .normal)
+        changeSegmentTitleColor(segment: sizeSegment, colorName: "BrownKEBUKE")
     }
     
     
     func updateSweetLevel() {
         for i in 0...4 {
             sweetSegment.setTitle("\(sugarLevelArray[i])", forSegmentAt: i)
-            sweetSegment.setTitleTextAttributes([ .foregroundColor: UIColor(named: "BrownKEBUKE")!], for: .normal)
         }
+        changeSegmentTitleColor(segment: sweetSegment, colorName: "BrownKEBUKE")
     }
     
     
@@ -125,24 +129,24 @@ class DetailViewController: UIViewController {
             iceSegment.isHidden = true
             for i in 0...5 {
                 iceHotSegment.setTitle("\(iceHotLevelArray[i])", forSegmentAt: i)
-                iceHotSegment.setTitleTextAttributes([.foregroundColor: UIColor(named: "BrownKEBUKE")!], for: .normal)
             }
+            changeSegmentTitleColor(segment: iceHotSegment, colorName: "BrownKEBUKE")
         } else {
             iceHotSegment.isHidden = true
             iceSegment.isHidden = false
             for i in 0...4 {
                 iceSegment.setTitle("\(iceLevelArray[i])", forSegmentAt: i)
-                iceSegment.setTitleTextAttributes([.foregroundColor: UIColor(named: "BrownKEBUKE")!], for: .normal)
             }
+            changeSegmentTitleColor(segment: iceSegment, colorName: "BrownKEBUKE")
         }
     }
     
+
     
-    func fetchData() {
-        if let beverageUrl = URLComponents(string: "\(beverageDetail.picUrl)")?.url {
-            beverageImage.kf.setImage(with: beverageUrl)
-        }
+    func changeSegmentTitleColor(segment: UISegmentedControl, colorName: String) {
+        segment.setTitleTextAttributes([.foregroundColor: UIColor(named: colorName)!], for: .normal)
     }
+    
     /*
      // MARK: - Navigation
      

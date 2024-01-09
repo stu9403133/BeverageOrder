@@ -80,16 +80,11 @@ class CategoryTableViewController: UITableViewController {
         return cell
     }
     
-    //DetailViewController 返回 category 頁面
-    @IBAction func unwind(_ unwindSegue: UIStoryboardSegue) {
-
-    }
-    
     
     // 判斷是否已經有訂單了，跳出修改頁面
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if sender is UIButton{
-            if shouldReviceOrder(){
+        if sender is UIButton {
+            if shouldReviseOrder() {
                 return true
             } else {
                 let alertNoOrderController = UIAlertController(title: "你還沒有訂單喔", message: "請繼續點餐", preferredStyle: .alert)
@@ -101,6 +96,19 @@ class CategoryTableViewController: UITableViewController {
         }
         return true
     }
+    
+    @IBAction func unwindToCategory(for unwindSegue: UIStoryboardSegue) {
+    
+    }
+
+    
+    @IBSegueAction func sendSegueID(_ coder: NSCoder) -> ReviceOrderTableViewController? {
+        let controller = ReviceOrderTableViewController(coder: coder)
+        controller?.segueID = "categoryToRevise"
+        
+        return controller
+    }
+    
     
     /*
      // Override to support conditional editing of the table view.

@@ -12,18 +12,19 @@
 		206D36012B44222F00260EF1 /* BeverageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D36002B44222F00260EF1 /* BeverageTableViewCell.swift */; };
 		206D36032B44224400260EF1 /* BeverageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D36022B44224400260EF1 /* BeverageTableViewController.swift */; };
 		206D36052B456A0700260EF1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D36042B456A0700260EF1 /* DetailViewController.swift */; };
-		206F72592B48F137008314D7 /* ReviceOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F72582B48F137008314D7 /* ReviceOrderTableViewController.swift */; };
-		206F725B2B48F15E008314D7 /* ReviceOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F725A2B48F15E008314D7 /* ReviceOrderTableViewCell.swift */; };
-		206F725D2B48F482008314D7 /* ShouldReviceOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F725C2B48F482008314D7 /* ShouldReviceOrder.swift */; };
+		206F72592B48F137008314D7 /* ReviseOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F72582B48F137008314D7 /* ReviseOrderTableViewController.swift */; };
+		206F725B2B48F15E008314D7 /* ReviseOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F725A2B48F15E008314D7 /* ReviseOrderTableViewCell.swift */; };
+		206F725D2B48F482008314D7 /* ShouldReviseOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F725C2B48F482008314D7 /* ShouldReviseOrder.swift */; };
 		2077A1D02B4157C1006AD869 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077A1CF2B4157C1006AD869 /* AppDelegate.swift */; };
 		2077A1D22B4157C1006AD869 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077A1D12B4157C1006AD869 /* SceneDelegate.swift */; };
 		2077A1D72B4157C1006AD869 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2077A1D52B4157C1006AD869 /* Main.storyboard */; };
 		2077A1D92B4157C3006AD869 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2077A1D82B4157C3006AD869 /* Assets.xcassets */; };
 		2077A1DC2B4157C3006AD869 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2077A1DA2B4157C3006AD869 /* LaunchScreen.storyboard */; };
-		2077A1E42B4157E6006AD869 /* BeverageJSONFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077A1E32B4157E6006AD869 /* BeverageJSONFile.swift */; };
+		2077A1E42B4157E6006AD869 /* BeverageJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077A1E32B4157E6006AD869 /* BeverageJSON.swift */; };
 		2077A1E62B415807006AD869 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077A1E52B415807006AD869 /* CategoryTableViewController.swift */; };
-		207DA4932B469E320063067F /* BeverageEncodableJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207DA4922B469E320063067F /* BeverageEncodableJSON.swift */; };
+		207DA4932B469E320063067F /* AirtableCodableJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207DA4922B469E320063067F /* AirtableCodableJSON.swift */; };
 		207DA4952B469EEB0063067F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207DA4942B469EEB0063067F /* LoginViewController.swift */; };
+		207FD1952B4C0D4400167081 /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207FD1942B4C0D4400167081 /* URLHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +32,9 @@
 		206D36002B44222F00260EF1 /* BeverageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageTableViewCell.swift; sourceTree = "<group>"; };
 		206D36022B44224400260EF1 /* BeverageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageTableViewController.swift; sourceTree = "<group>"; };
 		206D36042B456A0700260EF1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		206F72582B48F137008314D7 /* ReviceOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviceOrderTableViewController.swift; sourceTree = "<group>"; };
-		206F725A2B48F15E008314D7 /* ReviceOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviceOrderTableViewCell.swift; sourceTree = "<group>"; };
-		206F725C2B48F482008314D7 /* ShouldReviceOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShouldReviceOrder.swift; sourceTree = "<group>"; };
+		206F72582B48F137008314D7 /* ReviseOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviseOrderTableViewController.swift; sourceTree = "<group>"; };
+		206F725A2B48F15E008314D7 /* ReviseOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviseOrderTableViewCell.swift; sourceTree = "<group>"; };
+		206F725C2B48F482008314D7 /* ShouldReviseOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShouldReviseOrder.swift; sourceTree = "<group>"; };
 		2077A1CC2B4157C1006AD869 /* BeverageOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeverageOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2077A1CF2B4157C1006AD869 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2077A1D12B4157C1006AD869 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,10 +42,11 @@
 		2077A1D82B4157C3006AD869 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2077A1DB2B4157C3006AD869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2077A1DD2B4157C3006AD869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2077A1E32B4157E6006AD869 /* BeverageJSONFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageJSONFile.swift; sourceTree = "<group>"; };
+		2077A1E32B4157E6006AD869 /* BeverageJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageJSON.swift; sourceTree = "<group>"; };
 		2077A1E52B415807006AD869 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
-		207DA4922B469E320063067F /* BeverageEncodableJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageEncodableJSON.swift; sourceTree = "<group>"; };
+		207DA4922B469E320063067F /* AirtableCodableJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirtableCodableJSON.swift; sourceTree = "<group>"; };
 		207DA4942B469EEB0063067F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		207FD1942B4C0D4400167081 /* URLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		2077A1CE2B4157C1006AD869 /* BeverageOrder */ = {
 			isa = PBXGroup;
 			children = (
+				207FD1942B4C0D4400167081 /* URLHelper.swift */,
 				2091C71E2B43F2860006F4E5 /* Controller */,
 				2091C71D2B43F27B0006F4E5 /* View */,
 				2091C71C2B43F24A0006F4E5 /* Model */,
@@ -92,8 +95,8 @@
 		2091C71C2B43F24A0006F4E5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2077A1E32B4157E6006AD869 /* BeverageJSONFile.swift */,
-				207DA4922B469E320063067F /* BeverageEncodableJSON.swift */,
+				2077A1E32B4157E6006AD869 /* BeverageJSON.swift */,
+				207DA4922B469E320063067F /* AirtableCodableJSON.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,9 +119,9 @@
 				206D36022B44224400260EF1 /* BeverageTableViewController.swift */,
 				206D36002B44222F00260EF1 /* BeverageTableViewCell.swift */,
 				206D36042B456A0700260EF1 /* DetailViewController.swift */,
-				206F72582B48F137008314D7 /* ReviceOrderTableViewController.swift */,
-				206F725A2B48F15E008314D7 /* ReviceOrderTableViewCell.swift */,
-				206F725C2B48F482008314D7 /* ShouldReviceOrder.swift */,
+				206F72582B48F137008314D7 /* ReviseOrderTableViewController.swift */,
+				206F725A2B48F15E008314D7 /* ReviseOrderTableViewCell.swift */,
+				206F725C2B48F482008314D7 /* ShouldReviseOrder.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,18 +203,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				207DA4932B469E320063067F /* BeverageEncodableJSON.swift in Sources */,
+				207DA4932B469E320063067F /* AirtableCodableJSON.swift in Sources */,
 				206D36012B44222F00260EF1 /* BeverageTableViewCell.swift in Sources */,
 				206D35FC2B440E3800260EF1 /* CategoryTableViewCell.swift in Sources */,
-				2077A1E42B4157E6006AD869 /* BeverageJSONFile.swift in Sources */,
+				2077A1E42B4157E6006AD869 /* BeverageJSON.swift in Sources */,
 				2077A1D02B4157C1006AD869 /* AppDelegate.swift in Sources */,
 				2077A1D22B4157C1006AD869 /* SceneDelegate.swift in Sources */,
 				206D36032B44224400260EF1 /* BeverageTableViewController.swift in Sources */,
+				207FD1952B4C0D4400167081 /* URLHelper.swift in Sources */,
 				2077A1E62B415807006AD869 /* CategoryTableViewController.swift in Sources */,
-				206F72592B48F137008314D7 /* ReviceOrderTableViewController.swift in Sources */,
+				206F72592B48F137008314D7 /* ReviseOrderTableViewController.swift in Sources */,
 				207DA4952B469EEB0063067F /* LoginViewController.swift in Sources */,
-				206F725D2B48F482008314D7 /* ShouldReviceOrder.swift in Sources */,
-				206F725B2B48F15E008314D7 /* ReviceOrderTableViewCell.swift in Sources */,
+				206F725D2B48F482008314D7 /* ShouldReviseOrder.swift in Sources */,
+				206F725B2B48F15E008314D7 /* ReviseOrderTableViewCell.swift in Sources */,
 				206D36052B456A0700260EF1 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

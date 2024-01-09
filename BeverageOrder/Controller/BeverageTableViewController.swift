@@ -34,11 +34,8 @@ class BeverageTableViewController: UITableViewController {
         return beverageList.drinks!.count
     }
     
-    //    func fetchBeveragePic() {
-    //
-    //    }
     
-    // 產生TableView中cell的function
+    // 產生TableView中cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BeverageTableViewCell", for: indexPath) as? BeverageTableViewCell else
         {
@@ -75,7 +72,7 @@ class BeverageTableViewController: UITableViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if sender is UIButton{
-            if shouldReviceOrder(){
+            if shouldReviseOrder(){
                 return true
             } else {
                 let alertNoOrderController = UIAlertController(title: "你還沒有訂單喔", message: "請繼續點餐", preferredStyle: .alert)
@@ -87,6 +84,19 @@ class BeverageTableViewController: UITableViewController {
         }
         return true
     }
+    
+    
+    @IBAction func unwindToBeverage(for unwindSegue: UIStoryboardSegue) {
+    
+    }
+    
+    @IBSegueAction func sendSegueID(_ coder: NSCoder) -> ReviceOrderTableViewController? {
+        let controller = ReviceOrderTableViewController(coder: coder)
+        controller?.segueID = "beverageToRevise"
+        return controller
+    }
+    
+ 
     
     /*
      // Override to support conditional editing of the table view.

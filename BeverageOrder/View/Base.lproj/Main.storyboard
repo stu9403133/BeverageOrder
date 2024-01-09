@@ -68,7 +68,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system"/>
                                 <connections>
-                                    <segue destination="uhY-wZ-tct" kind="presentation" identifier="shouldGoToReviceOrder" id="yh1-0i-29U"/>
+                                    <segue destination="lgQ-o9-9OA" kind="show" destinationCreationSelector="sendSegueID:" id="zZz-Ph-TFM"/>
                                 </connections>
                             </button>
                             <color key="tintColor" name="BrownKEBUKE"/>
@@ -84,11 +84,11 @@
             <objects>
                 <tableViewController id="lgQ-o9-9OA" customClass="ReviceOrderTableViewController" customModule="BeverageOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="174" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="sqd-TW-xee">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviceOrderTableViewCell" rowHeight="174" id="jvo-ed-LoO" customClass="ReviceOrderTableViewCell" customModule="BeverageOrder" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviseOrderTableViewCell" rowHeight="174" id="jvo-ed-LoO" customClass="ReviceOrderTableViewCell" customModule="BeverageOrder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="174"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jvo-ed-LoO" id="H8v-vN-H8C">
@@ -153,19 +153,27 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="yrI-tK-AIg">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Rth-cl-47x">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="n35-Iu-h42">
-                                <rect key="frame" x="290" y="10.666666666666664" width="87" height="35"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="lKZ-aJ-imp">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="eY6-PN-L5h">
+                                <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="saveOrder:" destination="lgQ-o9-9OA" eventType="touchUpInside" id="NDj-DZ-8dW"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="G4T-fi-tMH" kind="unwind" identifier="beverageToRevise" unwindAction="unwindToBeverageFor:" id="UYQ-6l-naO"/>
+                        <segue destination="G4T-fi-tMH" kind="unwind" identifier="categoryToRevise" unwindAction="unwindToCategoryFor:" id="CVt-xC-kuO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KXO-QV-dqY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="G4T-fi-tMH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3443.5114503816794" y="700.70422535211276"/>
+            <point key="canvasLocation" x="2886" y="701"/>
         </scene>
         <!--我要喝...-->
         <scene sceneID="d9c-7z-KiK">
@@ -225,7 +233,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system"/>
                                 <connections>
-                                    <segue destination="uhY-wZ-tct" kind="presentation" identifier="shouldGoToReviceOrder" id="TL4-mS-k9V"/>
+                                    <segue destination="lgQ-o9-9OA" kind="show" destinationCreationSelector="sendSegueID:" id="vu1-7d-MgJ"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -233,7 +241,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1b9-8H-Awk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2901.5267175572517" y="-30.281690140845072"/>
+            <point key="canvasLocation" x="2900" y="-30"/>
         </scene>
         <!--為我特製-->
         <scene sceneID="bFV-tn-o8Z">
@@ -337,13 +345,13 @@
                         <outlet property="iceSegment" destination="36V-FF-m45" id="wKE-je-ABh"/>
                         <outlet property="sizeSegment" destination="lNc-BA-hyy" id="H4b-vn-W0P"/>
                         <outlet property="sweetSegment" destination="wH4-SN-H5S" id="GW6-Nz-dXF"/>
-                        <segue destination="9rT-iK-lFw" kind="unwind" identifier="unwindToCategoryLIst" unwindAction="unwind:" id="m7c-C7-MzK"/>
+                        <segue destination="9rT-iK-lFw" kind="unwind" identifier="unwindToCategoryLIst" unwindAction="unwindToCategoryFor:" id="vae-pv-30p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sW5-5e-kUE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="9rT-iK-lFw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3656" y="-30"/>
+            <point key="canvasLocation" x="3647" y="-30"/>
         </scene>
         <!--Item-->
         <scene sceneID="DzN-6b-Xyn">
@@ -423,27 +431,9 @@
             </objects>
             <point key="canvasLocation" x="685" y="-30"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="bXq-pK-y3l">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uhY-wZ-tct" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v2b-YF-U47">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lgQ-o9-9OA" kind="relationship" relationship="rootViewController" id="HO3-eq-mz7"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FIp-qZ-gbM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2516.7938931297708" y="700.70422535211276"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="TL4-mS-k9V"/>
+        <segue reference="vu1-7d-MgJ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
