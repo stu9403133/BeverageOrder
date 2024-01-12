@@ -12,6 +12,7 @@
 		206D36012B44222F00260EF1 /* BeverageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D36002B44222F00260EF1 /* BeverageTableViewCell.swift */; };
 		206D36032B44224400260EF1 /* BeverageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D36022B44224400260EF1 /* BeverageTableViewController.swift */; };
 		206D36052B456A0700260EF1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D36042B456A0700260EF1 /* DetailViewController.swift */; };
+		206D46DA2B4E8019001D76EA /* CheckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D46D92B4E8019001D76EA /* CheckTableViewController.swift */; };
 		206F72592B48F137008314D7 /* ReviseOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F72582B48F137008314D7 /* ReviseOrderTableViewController.swift */; };
 		206F725B2B48F15E008314D7 /* ReviseOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F725A2B48F15E008314D7 /* ReviseOrderTableViewCell.swift */; };
 		206F725D2B48F482008314D7 /* ShouldReviseOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F725C2B48F482008314D7 /* ShouldReviseOrder.swift */; };
@@ -32,6 +33,7 @@
 		206D36002B44222F00260EF1 /* BeverageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageTableViewCell.swift; sourceTree = "<group>"; };
 		206D36022B44224400260EF1 /* BeverageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeverageTableViewController.swift; sourceTree = "<group>"; };
 		206D36042B456A0700260EF1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		206D46D92B4E8019001D76EA /* CheckTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTableViewController.swift; sourceTree = "<group>"; };
 		206F72582B48F137008314D7 /* ReviseOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviseOrderTableViewController.swift; sourceTree = "<group>"; };
 		206F725A2B48F15E008314D7 /* ReviseOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviseOrderTableViewCell.swift; sourceTree = "<group>"; };
 		206F725C2B48F482008314D7 /* ShouldReviseOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShouldReviseOrder.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				206D36042B456A0700260EF1 /* DetailViewController.swift */,
 				206F72582B48F137008314D7 /* ReviseOrderTableViewController.swift */,
 				206F725A2B48F15E008314D7 /* ReviseOrderTableViewCell.swift */,
+				206D46D92B4E8019001D76EA /* CheckTableViewController.swift */,
 				206F725C2B48F482008314D7 /* ShouldReviseOrder.swift */,
 			);
 			path = Controller;
@@ -217,6 +220,7 @@
 				206F725D2B48F482008314D7 /* ShouldReviseOrder.swift in Sources */,
 				206F725B2B48F15E008314D7 /* ReviseOrderTableViewCell.swift in Sources */,
 				206D36052B456A0700260EF1 /* DetailViewController.swift in Sources */,
+				206D46DA2B4E8019001D76EA /* CheckTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

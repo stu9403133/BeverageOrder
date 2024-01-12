@@ -21,25 +21,50 @@ class ReviceOrderTableViewCell: UITableViewCell {
     
     @IBOutlet weak var reviceIceLevel: UIButton!
     
+    var sweetDefaultString: String!
     
+    var iceDefaultString: String!
+    
+    var indexCell: Int!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        updateUI()
+      
     }
     
-    func updateUI() {
+    @IBAction func changeSize(_ sender: Any) {
+        print("indexCell: ",indexCell!, "/nuserRevise.count: ", userRevise.records.count, "userInfoOrdered: ", userInfoOrdered)
+        if reviceSizeSegment.selectedSegmentIndex == 0 {
+            userRevise.records[indexCell].fields.size = "M"
+        } else {
+            userRevise.records[indexCell].fields.size = "L"
+        }
         
+    }
+    
+    @IBAction func changeSweet(_ sender: Any) {
+        userRevise.records[indexCell].fields.sweetLevel = (reviceSweetLevel.titleLabel?.text)!
+    }
+    
+    
+    @IBAction func changeIce(_ sender: Any) {
+        userRevise.records[indexCell].fields.iceLevel = (reviceIceLevel.titleLabel?.text)!
+    }
+    
+    
+    
+    func updateUI() {
         //顯示飲料圖示
-        if let picUrl = URLComponents(string: "\(userInfo.records[0].fields.picURL)")?.url {
+        if let picUrl = URLComponents(string: "\(userInfoOrdered.records[indexCell].fields.picURL)")?.url {
             reviceImage.kf.setImage(with: picUrl)
         }
-        //顯示飲料名稱
-        reviceLabel.text = userInfo.records[0].fields.beverage
+
+        // 顯示飲料名稱
+        reviceLabel.text = userInfoOrdered.records[indexCell].fields.beverage
         
-        // 更改大小
-        if userInfo.records[0].fields.size == "M" {
+        // 更改大小 的view
+        if userInfoOrdered.records[indexCell].fields.size == "M" {
             reviceSizeSegment.selectedSegmentIndex = 0
         } else {
             reviceSizeSegment.selectedSegmentIndex = 1
@@ -48,26 +73,32 @@ class ReviceOrderTableViewCell: UITableViewCell {
         //更改甜度
         reviceSweetLevel.changesSelectionAsPrimaryAction = true
         reviceSweetLevel.showsMenuAsPrimaryAction = true
-        reviceSweetLevel.menu = UIMenu(children: madeMenuArray(titleArray: sugarLevelArray, defaultString: userInfo.records[0].fields.sweetLevel))
+        reviceSweetLevel.menu = UIMenu(children: madeMenuArray(titleArray: sugarLevelArray, defaultString: sweetDefaultString))
         
         // 更改冰塊
         reviceIceLevel.changesSelectionAsPrimaryAction = true
         reviceIceLevel.showsMenuAsPrimaryAction = true
-        if userInfo.records[0].fields.iceLevel == "熱" {
-            reviceIceLevel.menu = UIMenu(children: madeMenuArray(titleArray: iceHotLevelArray, defaultString: userInfo.records[0].fields.iceLevel))
+        if iceDefaultString == "熱" {
+            reviceIceLevel.menu = UIMenu(children: madeMenuArray(titleArray: iceHotLevelArray, defaultString: iceDefaultString))
         } else {
-            reviceIceLevel.menu = UIMenu(children: madeMenuArray(titleArray: iceLevelArray, defaultString: userInfo.records[0].fields.iceLevel))
+            reviceIceLevel.menu = UIMenu(children: madeMenuArray(titleArray: iceLevelArray, defaultString: iceDefaultString))
         }
+        print(userRevise)
     }
     
     
     func madeMenuArray(titleArray: [String], defaultString: String) -> [UIAction] {
-        // handler設定為function型別的變數，再存入[UIAction]之中
+        
         var menuArray = [UIAction]()
         for i in 0...titleArray.count-1 {
             //利用回圈去製作menu中每一個button選項，預設handler都為.off
             menuArray.append(UIAction(title: "\(titleArray[i])", state: .off, handler: { UIAction in
-                userInfo.records[0].fields.iceLevel = titleArray[i]
+                if titleArray == sugarLevelArray {
+                    userRevise.records[self.indexCell].fields.sweetLevel  = titleArray[i]
+                } else {
+                    userRevise.records[self.indexCell].fields.iceLevel  = titleArray[i]
+                }
+                
             }))
         }
         

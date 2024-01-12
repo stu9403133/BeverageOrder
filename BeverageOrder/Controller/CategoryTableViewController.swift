@@ -83,7 +83,6 @@ class CategoryTableViewController: UITableViewController {
     
     // 判斷是否已經有訂單了，跳出修改頁面
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        print("刪除後是空值嗎", userInfo.records.isEmpty)
         if sender is UIButton {
             if shouldReviseOrder() {
                 return true

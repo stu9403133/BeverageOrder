@@ -7,8 +7,10 @@
 
 import Foundation
 
+var isOrdered = false
+
 func shouldReviseOrder() -> Bool {
-    if  userInfo.records[0].fields.picURL != "" && userInfo.records[0].fields.size != "" && userInfo.records[0].fields.price != "" && userInfo.records[0].fields.beverage != "" {
+    if isOrdered {
         return true
     } else {
         return false

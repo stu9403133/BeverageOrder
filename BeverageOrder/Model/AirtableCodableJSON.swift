@@ -27,11 +27,40 @@ struct OrderInfo: Codable {
     var picURL: String
 }
 
-struct BeverageOrdered:Codable {
-    let id: String
-    let createdTime: String
-    let fields: OrderInfo
+
+
+
+
+
+struct PostResponse: Codable{
+    var records: [BeverageOrdered]
 }
+
+//GET得到的資料和post資料上去後會得到id與createTime去解碼
+struct BeverageOrdered: Codable {
+    let id: String
+    let createdTime: String?
+    var fields: OrderInfo
+}
+
+
+struct ReviseRecord: Codable {
+    var records: [ReviseOrder]
+}
+
+struct ReviseOrder: Codable {
+    var id: String
+    var fields: OrderInfo
+}
+
+
+
+
+var userInfoOrdered = PostResponse(records: [])
+
+var userRevise = PostResponse(records: [])
+
+
 
 struct DeleteOrder:Codable {
     var records: [OrderID]
@@ -43,3 +72,4 @@ struct DeleteOrder:Codable {
 }
 
 var userInfo = BeverageOrder(records: [Records(fields: OrderInfo(name: "", beverage: "", sweetLevel: "", iceLevel: "", size: "", price: "", userID: UUID(), picURL: ""))])
+

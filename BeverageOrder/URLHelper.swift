@@ -33,16 +33,15 @@ func urlRequestOfRetrieveData() -> URLRequest {
 }
 
 // 用於修改訂單
-func urlRequestOfReviseData(userInfo: BeverageOrder) -> URLRequest {
+func urlRequestOfReviseData(userInfoRevise: ReviseRecord) -> URLRequest {
     var reviseRequest: URLRequest!
     if let reviseUrl = URL(string: "https://api.airtable.com/v0/appYbpFNsDs7f2F3b/Table%201") {
     var urlRequest = URLRequest(url: reviseUrl)
         urlRequest.setValue("Bearer patZesgpzGmOo9ujp.508da6a245bad1153aa593349673a0a417c7350fef028d6dc7be1a235c961305", forHTTPHeaderField: "Authorization")
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpMethod = "PATCH"
-        
         let encoder = JSONEncoder()
-        urlRequest.httpBody = try? encoder.encode(userInfo)
+        urlRequest.httpBody = try? encoder.encode(userInfoRevise)
         reviseRequest = urlRequest
     }
     return reviseRequest
