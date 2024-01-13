@@ -84,8 +84,16 @@ class ReviceOrderTableViewCell: UITableViewCell {
             reviceIceLevel.menu = UIMenu(children: madeMenuArray(titleArray: iceLevelArray, defaultString: iceDefaultString))
         }
         print(userRevise)
+        
+        changeSegmentTitleColor(segment: reviceSizeSegment, colorName: "BrownKEBUKE")
+        reviceLabel.textColor = UIColor(named: "BrownKEBUKE")
+        reviceIceLevel.setTitleColor(UIColor(named: "BrownKEBUKE"), for: .normal)
+        reviceSweetLevel.setTitleColor(UIColor(named: "BrownKEBUKE"), for: .normal)
     }
     
+    func changeSegmentTitleColor(segment: UISegmentedControl, colorName: String) {
+        segment.setTitleTextAttributes([.foregroundColor: UIColor(named: colorName)!], for: .normal)
+    }
     
     func madeMenuArray(titleArray: [String], defaultString: String) -> [UIAction] {
         

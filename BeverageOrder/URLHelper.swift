@@ -23,7 +23,7 @@ func urlRequestOfUploadData(userIfno: BeverageOrder) -> URLRequest {
 //檢索或取回訂單，用於呈現訂單資料
 func urlRequestOfRetrieveData() -> URLRequest {
     var retrieveRequest: URLRequest!
-    if let retrieveUrl = URL(string: "https://api.airtable.com/v0/appYbpFNsDs7f2F3b/Table%201") {
+    if let retrieveUrl = URL(string: "https://api.airtable.com/v0/appYbpFNsDs7f2F3b/tbl3UqA2yVZYze2kx?sort%5B0%5D%5Bfield%5D=name&sort%5B0%5D%5Bdirection%5D=asc") {
         var urlRequest = URLRequest(url: retrieveUrl)
         urlRequest.setValue("Bearer patZesgpzGmOo9ujp.508da6a245bad1153aa593349673a0a417c7350fef028d6dc7be1a235c961305", forHTTPHeaderField: "Authorization")
         urlRequest.httpMethod = "GET"
@@ -49,14 +49,12 @@ func urlRequestOfReviseData(userInfoRevise: ReviseRecord) -> URLRequest {
 
 
 //刪除訂單
-func urlRequestOfDeleteData(userInfo: DeleteOrder) -> URLRequest{
+func urlRequestOfDeleteData(recordID: String) -> URLRequest{
     var deleteRequest: URLRequest!
-    if let deleteUrl = URL(string: "https://api.airtable.com/v0/appYbpFNsDs7f2F3b/Table%201") {
+    if let deleteUrl = URL(string: "https://api.airtable.com/v0/appYbpFNsDs7f2F3b/Table%201?records[]=\(recordID)") {
         var urlRequest = URLRequest(url: deleteUrl)
         urlRequest.httpMethod = "DELETE"
         urlRequest.setValue("Bearer patZesgpzGmOo9ujp.508da6a245bad1153aa593349673a0a417c7350fef028d6dc7be1a235c961305", forHTTPHeaderField: "Authorization")
-        let encoder = JSONEncoder()
-        urlRequest.httpBody = try? encoder.encode(userInfo)
         deleteRequest = urlRequest
     }
     return deleteRequest

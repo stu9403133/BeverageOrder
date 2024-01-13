@@ -26,6 +26,7 @@
 		207DA4932B469E320063067F /* AirtableCodableJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207DA4922B469E320063067F /* AirtableCodableJSON.swift */; };
 		207DA4952B469EEB0063067F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207DA4942B469EEB0063067F /* LoginViewController.swift */; };
 		207FD1952B4C0D4400167081 /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207FD1942B4C0D4400167081 /* URLHelper.swift */; };
+		209C0FEB2B51381F00ABD556 /* CheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209C0FEA2B51381E00ABD556 /* CheckTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		207DA4922B469E320063067F /* AirtableCodableJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirtableCodableJSON.swift; sourceTree = "<group>"; };
 		207DA4942B469EEB0063067F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		207FD1942B4C0D4400167081 /* URLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
+		209C0FEA2B51381E00ABD556 /* CheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				206F72582B48F137008314D7 /* ReviseOrderTableViewController.swift */,
 				206F725A2B48F15E008314D7 /* ReviseOrderTableViewCell.swift */,
 				206D46D92B4E8019001D76EA /* CheckTableViewController.swift */,
+				209C0FEA2B51381E00ABD556 /* CheckTableViewCell.swift */,
 				206F725C2B48F482008314D7 /* ShouldReviseOrder.swift */,
 			);
 			path = Controller;
@@ -210,6 +213,7 @@
 				206D36012B44222F00260EF1 /* BeverageTableViewCell.swift in Sources */,
 				206D35FC2B440E3800260EF1 /* CategoryTableViewCell.swift in Sources */,
 				2077A1E42B4157E6006AD869 /* BeverageJSON.swift in Sources */,
+				209C0FEB2B51381F00ABD556 /* CheckTableViewCell.swift in Sources */,
 				2077A1D02B4157C1006AD869 /* AppDelegate.swift in Sources */,
 				2077A1D22B4157C1006AD869 /* SceneDelegate.swift in Sources */,
 				206D36032B44224400260EF1 /* BeverageTableViewController.swift in Sources */,

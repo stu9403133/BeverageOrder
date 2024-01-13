@@ -28,7 +28,9 @@ struct OrderInfo: Codable {
 }
 
 
-
+struct RetrieveData: Codable {
+    var records: [BeverageOrdered]
+}
 
 
 
@@ -53,11 +55,13 @@ struct ReviseOrder: Codable {
     var fields: OrderInfo
 }
 
+// 使用者初次訂購飲料之資訊
+var userInfo = BeverageOrder(records: [Records(fields: OrderInfo(name: "", beverage: "", sweetLevel: "", iceLevel: "", size: "", price: "", userID: UUID(), picURL: ""))])
 
-
-
+// 已送出到Airtable的訂單資訊
 var userInfoOrdered = PostResponse(records: [])
 
+// 已在Airtable的訂單，但使用者想要更改
 var userRevise = PostResponse(records: [])
 
 
@@ -71,5 +75,4 @@ struct DeleteOrder:Codable {
     }
 }
 
-var userInfo = BeverageOrder(records: [Records(fields: OrderInfo(name: "", beverage: "", sweetLevel: "", iceLevel: "", size: "", price: "", userID: UUID(), picURL: ""))])
 

@@ -15,17 +15,9 @@ class ReviceOrderTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         userRevise = userInfoOrdered
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     // MARK: - Table view data source
-    
-
-    
     @IBAction func saveOrder(_ sender: Any) {
         performSegue(withIdentifier: segueID, sender: nil)
         // 要寫patch的程式去更改後台資料
@@ -47,15 +39,15 @@ class ReviceOrderTableViewController: UITableViewController {
         var reviseRecord = ReviseRecord(records: [])
         
         // 依照最終訂單去創建PATCH資歷要有的records數量
-        for _ in 0..<userInfoOrdered.records.count {
-            print(reviseRecord)
-            reviseRecord.records.append(ReviseOrder(id: "", fields: OrderInfo(name: "", beverage: "", sweetLevel: "", iceLevel: "", size: "", price: "", userID: UUID(), picURL: "")))
-        }
-        // 接著把要更改的值傳給要PATCH的資料
+        print(reviseRecord)
         for i in 0..<userInfoOrdered.records.count {
+            reviseRecord.records.append(ReviseOrder(id: "", fields: OrderInfo(name: "", beverage: "", sweetLevel: "", iceLevel: "", size: "", price: "", userID: UUID(), picURL: "")))
+            // 接著把要更改的值傳給要PATCH的資料
             reviseRecord.records[i].id = userInfoOrdered.records[i].id
             reviseRecord.records[i].fields = userInfoOrdered.records[i].fields
         }
+        
+        
         return reviseRecord
     }
 
@@ -88,13 +80,25 @@ class ReviceOrderTableViewController: UITableViewController {
         return cell
     }
     
+    
+    // 關於表格Delete
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let deleteID = userInfoOrdered.records[indexPath.row].id
         
         userInfoOrdered.records.remove(at: indexPath.row)
         
         tableView.deleteRows(at: [indexPath], with: .automatic)
         
         tableView.reloadData()
+        
+        userRevise = userInfoOrdered
+        
+        URLSession.shared.dataTask(with: urlRequestOfDeleteData(recordID: deleteID)) { data, response, error in
+            if let data,
+               let content = String(data: data, encoding: .utf8) {
+                print(content)
+            }
+        }.resume()
         
         if userInfoOrdered.records.isEmpty {
             isOrdered = false

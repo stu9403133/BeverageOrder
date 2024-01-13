@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CheckTableViewController: UITableViewController {
 
+    
+    var retrieveData = RetrieveData(records: [])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -22,10 +26,20 @@ class CheckTableViewController: UITableViewController {
     // 這裡的fetchData是抓資料下來檢視
     // 問題這裡抓到的資料，是整筆airtable的資料>>應該是要根據使用者id抓回訂單資料而已
     func fetchData() {
-        URLSession.shared.dataTask(with: urlRequestOfRetrieveData()) { data, response, error in
+        URLSession.shared.dataTask(with: urlRequestOfRetrieveData()) { [self] data, response, error in
             if let data,
                let content = String(data: data, encoding: .utf8) {
                 print("try to get data successful: ", content)
+                do{
+                    let content = try JSONDecoder().decode(RetrieveData.self, from: data)
+                    self.retrieveData = content
+                    print(retrieveData)
+                    DispatchQueue.main.async {
+                        tableView.reloadData()
+                    }
+                } catch {
+                    print("decode data failed: ", error)
+                }
             }
         }.resume()
     }
@@ -34,23 +48,30 @@ class CheckTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return retrieveData.records.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CheckTableViewCell", for: indexPath) as? CheckTableViewCell else {
+            fatalError("dequeueReusableCell LoverTableViewCell failed")
+        }
+        cell.orderName.text = retrieveData.records[indexPath.row].fields.name + "你的飲料是："
+        cell.orderSize.text = retrieveData.records[indexPath.row].fields.size
+        cell.orderBeverage.text = retrieveData.records[indexPath.row].fields.beverage
+        cell.orderIceSweet.text = "\(retrieveData.records[indexPath.row].fields.sweetLevel)" + "\(retrieveData.records[indexPath.row].fields.iceLevel)"
+        if let picurl = URLComponents(string: (retrieveData.records[indexPath.row].fields.picURL))?.url {
+            cell.orderImage.kf.setImage(with: picurl)
+        }
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
