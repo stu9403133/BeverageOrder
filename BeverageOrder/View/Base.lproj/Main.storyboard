@@ -322,18 +322,6 @@
                                     <action selector="choicesize:" destination="4aY-H2-ueP" eventType="valueChanged" id="egJ-Lr-UAU"/>
                                 </connections>
                             </segmentedControl>
-                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CgK-c8-lhg" userLabel="iceHotSegment">
-                                <rect key="frame" x="4" y="567" width="385" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                    <segment title=""/>
-                                    <segment title=""/>
-                                    <segment title=""/>
-                                    <segment title=""/>
-                                </segments>
-                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="飲料描述" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ik-m8-V20">
                                 <rect key="frame" x="4" y="381" width="385" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -351,7 +339,6 @@
                         <outlet property="beverageImage" destination="tEy-Yo-ssu" id="EoS-B1-90O"/>
                         <outlet property="beverageName" destination="shp-Mf-aZz" id="zfS-dN-viW"/>
                         <outlet property="beveragePrice" destination="Wiz-8p-vZO" id="VPy-Fc-fCR"/>
-                        <outlet property="iceHotSegment" destination="CgK-c8-lhg" id="re3-nH-kKP"/>
                         <outlet property="iceSegment" destination="36V-FF-m45" id="wKE-je-ABh"/>
                         <outlet property="sizeSegment" destination="lNc-BA-hyy" id="H4b-vn-W0P"/>
                         <outlet property="sweetSegment" destination="wH4-SN-H5S" id="GW6-Nz-dXF"/>
@@ -361,7 +348,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sW5-5e-kUE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="9rT-iK-lFw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4563" y="668"/>
+            <point key="canvasLocation" x="4592" y="-30"/>
         </scene>
         <!--Item-->
         <scene sceneID="DzN-6b-Xyn">

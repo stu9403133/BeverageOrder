@@ -27,8 +27,6 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var iceSegment: UISegmentedControl!
     
-    @IBOutlet weak var iceHotSegment: UISegmentedControl!
-    
     @IBOutlet weak var beveragePrice: UILabel!
     
     override func viewDidLoad() {
@@ -55,11 +53,7 @@ class DetailViewController: UIViewController {
         userInfo.records[0].fields.beverage = beverageDetail.name
         userInfo.records[0].fields.sweetLevel = sugarLevelArray[sweetSegment.selectedSegmentIndex]
         userInfo.records[0].fields.picURL = beverageDetail.picUrl
-        if iceSegment.isHidden {
-            userInfo.records[0].fields.iceLevel = iceHotLevelArray[iceHotSegment.selectedSegmentIndex]
-        } else {
-            userInfo.records[0].fields.iceLevel = iceLevelArray[iceSegment.selectedSegmentIndex]
-        }
+        userInfo.records[0].fields.iceLevel = iceSegment.titleForSegment(at: iceSegment.selectedSegmentIndex) ?? ""
         print(userInfo)
         let sendAlertController = createAlert(alertTitle: "訂單即將送出", alertMessage: "請最後確認", alertOkAction: "OK", alertCancelAction: "取消")
         present(sendAlertController, animated: true)
@@ -70,12 +64,6 @@ class DetailViewController: UIViewController {
         let alertViewController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: alertOkAction, style: .default) {_ in
             // 結合Result type
-            
-            
-            
-            
-            
-            
             AirtableService.shared.httpCRUD(urlRequest: urlRequestOfUploadData(userIfno: userInfo)) { result in
                 switch result {
                 case .success(let data):
@@ -145,22 +133,16 @@ class DetailViewController: UIViewController {
     
     
     func updateIceLevel() {
-        if beverageDetail.info.hotAvailable {
-            iceHotSegment.isHidden = false
-            iceSegment.isHidden = true
-            for i in 0...5 {
-                iceHotSegment.setTitle("\(iceHotLevelArray[i])", forSegmentAt: i)
-            }
-            changeSegmentTitleColor(segment: iceHotSegment, colorName: "BrownKEBUKE")
-        } else {
-            iceHotSegment.isHidden = true
-            iceSegment.isHidden = false
-            for i in 0...4 {
-                iceSegment.setTitle("\(iceLevelArray[i])", forSegmentAt: i)
-            }
-            changeSegmentTitleColor(segment: iceSegment, colorName: "BrownKEBUKE")
+        for i in 0...4 {
+            iceSegment.setTitle("\(iceLevelArray[i])", forSegmentAt: i)
         }
+        if beverageDetail.info.hotAvailable {
+            iceSegment.insertSegment(withTitle: "熱", at: iceLevelArray.count, animated: false)
+        }
+        changeSegmentTitleColor(segment: iceSegment, colorName: "BrownKEBUKE")
     }
+    
+    
     
     
     
