@@ -7,6 +7,46 @@
 
 import Foundation
 
+class AirtableService {
+    
+    // 為了讓其他controller可以使用
+    static let shared = AirtableService()
+    
+    enum Result <Success, Failure> where Failure:Error {
+        case success(Data)
+        
+        case failure(NetworkError)
+    }
+
+    
+    enum NetworkError: Error {
+        case invaildData
+        case invaildResponse
+        
+    }
+    
+    //建立訂單改-URLSession直接也寫在這
+    func httpCRUD (urlRequest: URLRequest, completion: @escaping (Result<Data, NetworkError>) -> Void)  {
+        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            guard let data,
+                  let content = String(data: data, encoding: .utf8) else {
+                            completion(.failure(.invaildData))
+                            print("create data failed: ")
+                            return
+                            }
+            print(content)
+            completion(.success(data))
+        }.resume()
+    }
+    
+    
+    
+    
+    
+}
+
+
+// 設定http Method, Body等等
 // 建立訂單
 func urlRequestOfUploadData(userIfno: BeverageOrder) -> URLRequest {
     let uploadUrl = URL(string: "https://api.airtable.com/v0/appYbpFNsDs7f2F3b/Table%201")!

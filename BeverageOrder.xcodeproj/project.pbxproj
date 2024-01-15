@@ -65,6 +65,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2070EFD22B54FAE9007E7920 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				207DA4942B469EEB0063067F /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2070EFD32B54FAFB007E7920 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				2077A1E52B415807006AD869 /* CategoryTableViewController.swift */,
+				206D35FB2B440E3800260EF1 /* CategoryTableViewCell.swift */,
+				206D36022B44224400260EF1 /* BeverageTableViewController.swift */,
+				206D36002B44222F00260EF1 /* BeverageTableViewCell.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		2070EFD42B54FB12007E7920 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				206D36042B456A0700260EF1 /* DetailViewController.swift */,
+				206F72582B48F137008314D7 /* ReviseOrderTableViewController.swift */,
+				206F725A2B48F15E008314D7 /* ReviseOrderTableViewCell.swift */,
+				206D46D92B4E8019001D76EA /* CheckTableViewController.swift */,
+				209C0FEA2B51381E00ABD556 /* CheckTableViewCell.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
 		2077A1C32B4157C1006AD869 = {
 			isa = PBXGroup;
 			children = (
@@ -117,16 +148,9 @@
 		2091C71E2B43F2860006F4E5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				207DA4942B469EEB0063067F /* LoginViewController.swift */,
-				2077A1E52B415807006AD869 /* CategoryTableViewController.swift */,
-				206D35FB2B440E3800260EF1 /* CategoryTableViewCell.swift */,
-				206D36022B44224400260EF1 /* BeverageTableViewController.swift */,
-				206D36002B44222F00260EF1 /* BeverageTableViewCell.swift */,
-				206D36042B456A0700260EF1 /* DetailViewController.swift */,
-				206F72582B48F137008314D7 /* ReviseOrderTableViewController.swift */,
-				206F725A2B48F15E008314D7 /* ReviseOrderTableViewCell.swift */,
-				206D46D92B4E8019001D76EA /* CheckTableViewController.swift */,
-				209C0FEA2B51381E00ABD556 /* CheckTableViewCell.swift */,
+				2070EFD22B54FAE9007E7920 /* Login */,
+				2070EFD32B54FAFB007E7920 /* Menu */,
+				2070EFD42B54FB12007E7920 /* Order */,
 				206F725C2B48F482008314D7 /* ShouldReviseOrder.swift */,
 			);
 			path = Controller;

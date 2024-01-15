@@ -25,12 +25,27 @@ class ReviceOrderTableViewController: UITableViewController {
         userInfoOrdered = userRevise
         print("user save, userInfoOrdered: ", userInfoOrdered)
         
-        URLSession.shared.dataTask(with: urlRequestOfReviseData(userInfoRevise: readyPostBody())) { data, response, error in
-            if let data {
+        AirtableService.shared.httpCRUD(urlRequest: urlRequestOfReviseData(userInfoRevise: readyPostBody())) { result in
+            switch result{
+            case .success(let data):
                 let content = String(data: data, encoding: .utf8)
-                print(content!)
+                print("Revise order successful", content!)
+            case .failure(let networkError):
+                switch networkError{
+                case .invaildData:
+                    print(networkError)
+                case .invaildResponse:
+                    print(networkError)
+                }
             }
-        }.resume()
+        }
+        
+//        URLSession.shared.dataTask(with: urlRequestOfReviseData(userInfoRevise: readyPostBody())) { data, response, error in
+//            if let data {
+//                let content = String(data: data, encoding: .utf8)
+//                print(content!)
+//            }
+//        }.resume()
     }
     
     // 將修改好的資料轉為符合POST格式的型別

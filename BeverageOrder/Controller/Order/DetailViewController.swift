@@ -11,7 +11,7 @@ import Kingfisher
 class DetailViewController: UIViewController {
     
     var beverageDetail = Drink(name: "", info: Infos(M: "", L: "", description: "", hotAvailable: true), picUrl: "")
-     // UUID().uuidString
+    // UUID().uuidString
     
     var isSendOrder = false
     
@@ -69,21 +69,32 @@ class DetailViewController: UIViewController {
     func createAlert(alertTitle: String, alertMessage: String, alertOkAction: String, alertCancelAction: String) -> UIAlertController {
         let alertViewController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: alertOkAction, style: .default) {_ in
-            URLSession.shared.dataTask(with: urlRequestOfUploadData(userIfno: userInfo)) { data, response, error in
-                if let data,
-                   let content = String(data: data, encoding: .utf8) {
-                    print("update data is successful: ", content)
+            // 結合Result type
+            
+            
+            
+            
+            
+            
+            AirtableService.shared.httpCRUD(urlRequest: urlRequestOfUploadData(userIfno: userInfo)) { result in
+                switch result {
+                case .success(let data):
                     do{
                         let content = try JSONDecoder().decode(PostResponse.self, from: data)
-                        //  儲存送出的資料
                         userInfoOrdered.records.insert(contentsOf: content.records, at: 0)
                         print("decode post data is successful: ", userInfoOrdered.records.count, userInfoOrdered)
                     } catch {
-                        print("decode post data is failed: ", error)
+                        print("decode failed: ", error)
                     }
-                        
+                case .failure(let networkError):
+                    switch networkError {
+                    case .invaildData:
+                        print(networkError)
+                    case .invaildResponse:
+                        print(networkError)
+                    }
                 }
-            }.resume()
+            }
             // 送出訂單，因此可以打開購物車，所以toggle讓Bool值改變
             isOrdered = true
             self.performSegue(withIdentifier: "unwindToCategoryLIst", sender: nil)
@@ -94,7 +105,7 @@ class DetailViewController: UIViewController {
         return alertViewController
     }
     
-
+    
     func updateUI() {
         // 抓取飲料圖片，並更新在UI上
         fetchData()
@@ -151,7 +162,7 @@ class DetailViewController: UIViewController {
         }
     }
     
-
+    
     
     func changeSegmentTitleColor(segment: UISegmentedControl, colorName: String) {
         segment.setTitleTextAttributes([.foregroundColor: UIColor(named: colorName)!], for: .normal)
